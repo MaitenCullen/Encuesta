@@ -1,0 +1,38 @@
+
+<h1> Formulario</h1>
+<form (ngSubmit)="onSubmit(formulario.value)" #formulario ="ngForm">
+    <pre>{{formulario.value | json}}</pre>
+<div class="mb-4"> 
+    <label for="nombre" class="formulario-Label">Nombre</label>
+    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="model.nombre" required>
+</div>
+<div class="invalid-feeback">Es necesario completes acá</div>
+<div class="mb-4 form-check"> 
+    <label for="check" class="formulario-Label">haces click</label>
+    <input type="checkbox" class="form-check-input" id="check" [(ngModel)]="model.check" required>
+    <div class="invalid-feeback">Es necesario completes acá</div>
+ </div>
+<div class="mb-4"> 
+    <label for="valores" class="formulario-Label">valores</label>
+    <select name="valor" id="valor" class="form-select form-select-sm" [(ngModel)]="model.valor"required>
+        <option value="valor1">
+            valor1
+        </option>
+        <option value="valor2">
+            valor2
+        </option>
+        <option value="valor3">
+            valor3
+        </option>
+    </select>
+    <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="model.apellido" required>
+    <div class="invalid-feeback">Es necesario completes acá</div>
+</div>
+<div class="mb-4"> 
+    <label for="nombre" class="formulario-Label">Nombre</label>
+    <textarea class="form-control" name="comentario" id="comentario" rows="10" placeholder="escribe algo" [(ngModel)]="model.comentario" required></textarea>    <div class="invalid-feedback">Es necesario completes acá</div>
+</div>
+<div class="d-grid gap-2 col-4 float-end">
+    <button type="submit" class="btn btn-info btn-lg"> Enviar</button>
+</div>
+</form>
